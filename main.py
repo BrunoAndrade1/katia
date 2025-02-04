@@ -46,7 +46,7 @@ with st.container():
 # Carregar os dados
 @st.cache_data
 def load_data():
-    file_path = "raposo_nao_fatal.xlsx"
+    url = "https://raw.githubusercontent.com/BrunoAndrade1/katia/main/raposo_nao_fatal.xlsx"
     df = pd.read_excel(file_path, sheet_name="Planilha1")
     df["Data do Sinistro"] = pd.to_datetime(df["Data do Sinistro"], errors="coerce")
     df["Hora do Sinistro"] = pd.to_datetime(df["Hora do Sinistro"], format='%H:%M:%S', errors="coerce").dt.hour
